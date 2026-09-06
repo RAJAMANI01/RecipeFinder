@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Recipe Finder</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<div class="logo">🍴 Recipe<span>Finder</span></div>
+<div class="tagline">Discover something delicious</div>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+<p class="small-title">YOUR DAILY FOOD INSPIRATION</p>
+<h1>Find a recipe<br><span>you'll love.</span></h1>
+<p>Search by ingredients, cuisine or dietary preference and discover your next delicious meal.</p>
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Try chicken, pasta, rice...">
+<button onclick="loadRecipes()">🔍 Search</button>
+</div>
+</div>
+<div class="hero-food">
+<div class="food-circle">🍝</div>
+<div class="floating-card">⭐ 4.9<br><small>Top Rated</small></div>
+</div>
+</section>
+
+<section class="filters">
+<div>
+<label>Diet</label>
+<select id="dietFilter" onchange="loadRecipes()">
+<option value="all">All Diets</option>
+<option value="Vegetarian">Vegetarian</option>
+<option value="Non-Vegetarian">Non-Vegetarian</option>
+<option value="Vegan">Vegan</option>
+</select>
+</div>
+<div>
+<label>Cuisine</label>
+<select id="cuisineFilter" onchange="loadRecipes()">
+<option value="all">All Cuisines</option>
+<option value="Italian">Italian</option>
+<option value="Indian">Indian</option>
+<option value="Mexican">Mexican</option>
+<option value="Chinese">Chinese</option>
+<option value="American">American</option>
+</select>
+</div>
+<div>
+<label>Meal Type</label>
+<select id="mealFilter" onchange="loadRecipes()">
+<option value="all">All Meals</option>
+<option value="Breakfast">Breakfast</option>
+<option value="Lunch">Lunch</option>
+<option value="Dinner">Dinner</option>
+<option value="Dessert">Dessert</option>
+</select>
+</div>
+<button class="clear-btn" onclick="clearFilters()">Clear Filters</button>
+</section>
+
+<main>
+<div class="section-heading">
+<div>
+<p class="small-title">EXPLORE RECIPES</p>
+<h2>What are you cooking today?</h2>
+</div>
+<div id="recipeCount">0 recipes</div>
+</div>
+<div id="recipeContainer" class="recipe-grid"></div>
+</main>
+
+<div id="modal" class="modal">
+<div class="modal-content">
+<button class="close" onclick="closeModal()">×</button>
+<div id="modalContent"></div>
+</div>
+</div>
+
+<footer>
+<p>🍴 RecipeFinder — Discover. Cook. Enjoy.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
